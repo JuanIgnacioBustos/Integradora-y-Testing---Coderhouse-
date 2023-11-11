@@ -23,9 +23,9 @@ const customLevelOptions = {
 const prodLogger = winston.createLogger({
     levels: customLevelOptions.levels,
     transports: [
-    new winston.transports.Console({level: "info"}),
-    new winston.transports.File({level: "error", filename: "./errors.log"})
-]
+        new winston.transports.Console({level: "info"}),
+        new winston.transports.File({level: "error", filename: "./errors.log"})
+    ]
 })
 
 const devLogger = winston.createLogger({

@@ -31,17 +31,17 @@ const login = async (req, res) => {
 
 const loginFail = async (req, res) => {
     res.status(400).send({status:"error", details: "Login failed"});
-}
+    }
 
-const logout = async (req, res) => {
+    const logout = async (req, res) => {
     const user = req.user
     await userService.updateUserLastConnection(user.id)
 
     res.clearCookie('authToken')
     res.send({status: "sucess"})
-}
+    }
 
-const resetPassword = async (req, res) => {
+    const resetPassword = async (req, res) => {
     const {email, password} = req.body;
 
     if (!email || !password) {

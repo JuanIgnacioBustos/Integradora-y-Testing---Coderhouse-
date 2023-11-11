@@ -42,6 +42,12 @@ export default class ProductManager {
         return result
     }
 
+    async getProductByCode(code) {
+        let result = await productsModel.findOne({ code: code })
+
+        return result
+    }
+
     async updateProduct(id, updatedProduct) {
         let result = await productsModel.updateOne({ _id: id}, { $set: updatedProduct })
         return result
@@ -51,5 +57,5 @@ export default class ProductManager {
         let result = await productsModel.deleteOne({ _id: id })
         return result
     }
-    
+
 }
